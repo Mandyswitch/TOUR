@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【湖水綠的聖誕漫步】奧捷 10 日 Vibe</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts - Inter & Noto Sans TC -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+TC:wght@300;400;700&display=swap">
+    <style>
+        :root {
+            /* Christmas Vibe Colors */
+            --color-primary: #15433C; /* Deep Green */
+            --color-accent: #A62F39; /* Wine Red */
+            --color-light: #F7F5F0; /* Cream White */
+            --color-gold: #D4AF37; /* Gold Accent */
+        }
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-primary);
+        }
+        .header-bg {
+            background-color: var(--color-primary);
+        }
+        .tab-active {
+            color: var(--color-light);
+            background-color: var(--color-accent);
+            border-bottom: 2px solid var(--color-gold);
+        }
+        .tab-inactive {
+            color: var(--color-light);
+            background-color: var(--color-primary);
+            opacity: 0.8;
+        }
+        .card-bg {
+            background-color: #ffffff;
+            border-left: 5px solid var(--color-accent);
+        }
+        .vibe-title {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+        .llm-simulated {
+            color: var(--color-gold);
+            font-weight: 700;
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="header-bg p-4 shadow-lg sticky top-0 z-10">
+        <h1 class="text-2xl font-bold text-white text-center">【湖水綠的聖誕漫步】奧捷 10 日 Vibe</h1>
+        <p class="text-sm text-green-200 text-center">團號: PRG10EKA251208B (2025/12/08 出發)</p>
+    </header>
+
+    <!-- 頂部導航 Tab Bar -->
+    <nav class="sticky top-16 z-10 flex text-xs md:text-sm shadow-md">
+        <!-- Tab 1: 總覽 -->
+        <button data-tab="overview" class="tab-button flex-1 py-3 px-1 text-center font-semibold tab-active transition duration-300">總覽 & 領隊</button>
+        <!-- Tab 2: 航班/當地 -->
+        <button data-tab="local" class="tab-button flex-1 py-3 px-1 text-center font-semibold tab-inactive transition duration-300">航班 & 當地</button>
+        <!-- Tab 3: 行程 -->
+        <button data-tab="itinerary" class="tab-button flex-1 py-3 px-1 text-center font-semibold tab-inactive transition duration-300">行程 & 美食</button>
+        <!-- Tab 4: 退稅 -->
+        <button data-tab="tax" class="tab-button flex-1 py-3 px-1 text-center font-semibold tab-inactive transition duration-300">退稅 & 購物</button>
+    </nav>
+
+    <main class="p-4 pt-6 max-w-4xl mx-auto">
+        <!-- 1. 總覽 & 領隊資訊 (Overview Tab) -->
+        <section id="overview" class="tab-content space-y-6">
+            <h2 class="vibe-title text-xl mb-4">✨ 聖誕之旅啟程</h2>
+
+            <!-- 團務總覽 -->
+            <div class="card-bg p-4 rounded-lg shadow-md">
+                <h3 class="font-bold text-lg mb-2">團務總覽</h3>
+                <ul class="text-sm space-y-2">
+                    <li><span class="font-medium text-red-700">團 名：</span>雙享奧捷 10 天 EK 雙點進出</li>
+                    <li><span class="font-medium text-red-700">集合日期：</span>2025 年 12 月 08 日 (一)</li>
+                    <li><span class="font-medium text-red-700">集合時間：</span>**晚上 21 點 20 分**</li>
+                    <li><span class="font-medium text-red-700">集合地點：</span>桃園國際機場 第二航廈 阿聯酋航空 **團體櫃檯 (23 號櫃檯)**</li>
+                </ul>
+            </div>
+
+            <!-- 領隊資訊 -->
+            <div class="card-bg p-4 rounded-lg shadow-md">
+                <h3 class="font-bold text-lg mb-2">專屬領隊</h3>
+                <p class="text-sm">領 隊：朱遠光 先生</p>
+                <p class="text-sm">手機號碼：<a href="tel:0933909186" class="text-blue-600 hover:text-blue-800 font-mono">0933-909-186</a></p>
+                <p class="mt-2 text-xs text-gray-500">如有緊急事務，請優先聯繫領隊。</p>
+            </div>
+        </section>
+
+        <!-- 2. 航班/當地須知 (Local Tab) -->
+        <section id="local" class="tab-content hidden space-y-6">
+            <h2 class="vibe-title text-xl mb-4">✈️ 航班/行李 & 當地須知</h2>
+
+            <!-- 航班資訊卡 (已移除亂碼符號) -->
+            <div class="card-bg p-4 rounded-lg shadow-md space-y-3">
+                <h3 class="font-bold text-lg">阿聯酋航空 EK 航班資訊</h3>
+                <div class="border-b pb-2">
+                    <p class="font-medium text-red-700">去程：台北到杜拜轉布拉格 (TPE 到 DXB 轉 PRG)</p>
+                    <p class="text-xs ml-2">TPE/DXB EK387 (2025/12/09) 00:20/06:15</p>
+                    <p class="text-xs ml-2">DXB/PRG EK139 (2025/12/09) 08:40/12:30</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">回程：維也納到杜拜轉台北 (VIE 到 DXB 轉 TPE)</p>
+                    <p class="text-xs ml-2">VIE/DXB EK126 (2025/12/16) 21:45/06:25+1</p>
+                    <p class="text-xs ml-2">DXB/TPE EK386 (2025/12/17) 08:45/20:40</p>
+                </div>
+                <div class="pt-2 border-t text-sm">
+                    <p><span class="font-medium">機型參考：</span>多為 Boeing 777 或 Airbus A380。</p>
+                    <p><span class="font-medium">行李限額：</span>手提 7kg $\mid$ 托運 **30kg** (請注意不超重)。</p>
+                </div>
+            </div>
+
+            <!-- 當地須知/動態資訊 -->
+            <div class="card-bg p-4 rounded-lg shadow-md space-y-3">
+                <h3 class="font-bold text-lg">當地資訊 (動態更新)</h3>
+                <div id="dynamic-info" class="text-sm space-y-2">
+                    <!-- Dynamic Data loaded here -->
+                    <p>當地氣溫 (12月)：布拉格/維也納平均 <span class="llm-simulated">2°C ~ -2°C (估)</span></p>
+                    <p>時差：比台灣慢 <span class="llm-simulated">7 小時</span> (冬令)</p>
+                    <p>捷克克朗 (CZK) 參考匯率：1 CZK $\approx$ NT$ <span class="llm-simulated" id="rate-czk">載入中...</span></p>
+                    <p>歐元 (EUR) 參考匯率：1 EUR $\approx$ NT$ <span class="llm-simulated" id="rate-eur">載入中...</span></p>
+                </div>
+                <button onclick="fetchDynamicData()" class="mt-4 w-full py-2 bg-green-800 text-white rounded-md hover:bg-green-700 transition duration-300">
+                    點擊更新即時匯率與天氣 (模擬)
+                </button>
+            </div>
+
+            <!-- 綜合提醒卡 -->
+            <div class="card-bg p-4 rounded-lg shadow-md space-y-3">
+                <h3 class="font-bold text-lg">綜合提醒與會話</h3>
+                <ul class="text-sm space-y-2 list-disc list-inside">
+                    <li>**調時差建議：** 抵達當日白天保持清醒，晚上盡早休息。</li>
+                    <li>**飲用水：** 捷克水不建議飲用，請購買瓶裝水。</li>
+                    <li>**上車規定：** 不能帶杯裝飲料、冰淇淋上車。</li>
+                    <li>**捷克會話：** 你好 $\rightarrow$ **Dobrý den** (多布里典) / 謝謝 $\rightarrow$ **Děkuji** (碟庫伊)</li>
+                    <li>**奧地利會話：** 你好 $\rightarrow$ **Guten Tag** (顧騰 塔格) / 謝謝 $\rightarrow$ **Danke** (丹克)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. 行程 & 美食探索 (Itinerary Tab) -->
+        <section id="itinerary" class="tab-content hidden space-y-6">
+            <h2 class="vibe-title text-xl mb-4">🗺️ 聖誕漫步：行程 & 美食探索</h2>
+            <div id="itinerary-list" class="space-y-4">
+                <!-- Itinerary Cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- 4. 退稅規定 (Tax Tab) -->
+        <section id="tax" class="tab-content hidden space-y-6">
+            <h2 class="vibe-title text-xl mb-4">💰 退稅 & 杜拜轉機特輯</h2>
+
+            <!-- 退稅規定卡 -->
+            <div class="card-bg p-4 rounded-lg shadow-md">
+                <h3 class="font-bold text-lg mb-3 border-b pb-2 text-red-700">歐盟退稅規範 (更簡潔易懂版)</h3>
+
+                <p class="text-sm font-semibold mb-2">🔖 捷克/奧地利 退稅門檻：</p>
+                <div class="flex justify-around text-center text-sm mb-4 bg-stone-100 p-2 rounded">
+                    <div>
+                        <p class="font-bold">捷克 (CZK)</p>
+                        <p class="text-red-700 font-bold">滿 2,001 CZK</p>
+                    </div>
+                    <div>
+                        <p class="font-bold">奧地利 (EUR)</p>
+                        <p class="text-red-700 font-bold">滿 75 EUR</p>
+                    </div>
+                </div>
+
+                <p class="text-sm font-semibold mb-1">✅ 退稅三步驟：</p>
+                <ol class="text-xs space-y-2 list-decimal list-inside ml-2">
+                    <li>**購物時：** 達門檻，主動出示護照，索取 **退稅單 + 收據 + 信封**。</li>
+                    <li>**填寫資料：** 填妥英文姓名、護照號碼、及地址：<br><span class="font-mono text-green-800 italic">No. 26, Ln. 347, Sec. 2, Yanping Rd., Xiangshan Dist., Hsinchu City 300057 , Taiwan</span></li>
+                    <li>**離境時 (維也納 VIE)：** 帶**未拆封**商品、稅單、收據，給海關**蓋章**後，再領取退稅金 (現金或信用卡)。</li>
+                </ol>
+                <p class="text-xs text-gray-500 mt-3">**稅金佔比：** 捷克 VAT 約 21% / 奧地利 VAT 約 20%。實際退回金額需扣除退稅公司手續費。</p>
+            </div>
+
+            <!-- 杜拜轉機卡 -->
+            <div class="card-bg p-4 rounded-lg shadow-md">
+                <h3 class="font-bold text-lg mb-3 border-b pb-2 text-red-700">🇦🇪 杜拜轉機特輯 (DXB)</h3>
+                <p class="text-sm mb-3">轉機時間充裕，可逛杜拜免稅店 (Dubai Duty Free)。</p>
+
+                <div class="space-y-3">
+                    <p class="font-semibold text-sm">迪拉姆 (AED) 參考匯率：1 AED $\approx$ NT$ <span class="llm-simulated" id="rate-aed">載入中...</span></p>
+
+                    <p class="font-semibold text-sm">🎁 建議伴手禮：</p>
+                    <ul class="text-xs space-y-2 list-disc list-inside ml-2">
+                        <li>**駱駝牛奶巧克力** (Camel Milk Chocolate)：口感絲滑，獨具特色。</li>
+                        <li>**椰棗** (Dates)：常有堅果內餡，當地特色甜點。</li>
+                        <li>**香水精油** (Attar / Perfume Oil)：中東傳統香氛，無酒精。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 住宿資訊 (Separated from local for cleaner view) -->
+        <section id="accommodation" class="space-y-6">
+            <h2 class="vibe-title text-xl mb-4">🏨 住宿資訊</h2>
+            <div id="hotel-list" class="space-y-4">
+                <!-- Hotel Cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module">
+        // 模擬 Firebase Global Variables for Canvas environment.
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+
+        // === 靜態數據定義 (使用中文，保持Vibe Coding的一致性) ===
+
+        const tripData = {
+            leader: { name: "朱遠光 先生", phone: "0933-909-186" },
+            dates: { start: "2025/12/08", end: "2025/12/17" },
+            englishAddress: "No. 26, Ln. 347, Sec. 2, Yanping Rd., Xiangshan Dist., Hsinchu City 300057 , Taiwan (R.O.C.)"
+        };
+
+        // 修正 Google Map 連結為可靠的搜尋連結
+        const hotelList = [
+            { date: "12/09 - 12/11", city: "布拉格 (捷克)", name: "Hotel Duo (4★)", add: "Teplicka 492, Prague, 19000, Czech Republic", tel: "+420-266131111", mapLink: "https://www.google.com/maps/search/?api=1&query=Hotel+Duo+Prague" },
+            { date: "12/12", city: "布達優維札 (捷克)", name: "Clarion Congress Hotel Ceske Budejovice (4★)", add: "Prazska trida 14, Ceske Budejovice, 370 04, Czech Republic", tel: "+420-389102111", mapLink: "https://www.google.com/maps/search/?api=1&query=Clarion+Congress+Hotel+Ceske+Budejovice" },
+            { date: "12/13", city: "薩爾茲堡 (奧地利)", name: "Mercure Salzburg City (4★)", add: "Bayerhamerstrasse 14 a, Salzburg, 5020, Austria", tel: "+43-6628814380", mapLink: "https://www.google.com/maps/search/?api=1&query=Mercure+Salzburg+City" },
+            { date: "12/14 - 12/15", city: "維也納 (奧地利)", name: "Hotel Rainers 21 (4★)", add: "Liebermannstrasse/Campus21, Brunn am Gebirge, Vienna, 2345, Austria", tel: "+43-160580540", mapLink: "https://www.google.com/maps/search/?api=1&query=Hotel+Rainers+21+Vienna" },
+            { date: "12/16", city: "飛機上", name: "IN FLIGHT", add: "VIE/DXB EK126", tel: "-", mapLink: "" },
+        ];
+
+        const itinerary = [
+            { date: "12/09 (二)", theme: "【初見布拉格】高堡區＆新城區散步", lunch: "機上輕食/自理", dinner: "中式六菜一湯+水果", details: "【下車參觀】高堡區、新城區：跳舞的房子。調時差建議：抵達當日白天活動時保持清醒。", tips: "高堡區是俯瞰布拉格的好地點。" },
+            { date: "12/10 (三)", theme: "【波西米亞心臟】城堡區、舊城區", lunch: "米其林推薦餐", lunchDetail: "Mlýnec (查理大橋旁景觀餐廳，建議提前預約): 約 1000 - 1500 CZK", dinner: "中式六菜一湯+水果", details: "【門票安排】舊皇宮、聖維特教堂、黃金小巷。【下車參觀】查理士橋、天文鐘、舊城廣場。【門票安排】布拉格一日地鐵票。", tips: "聖維特教堂極為壯觀，黃金小巷充滿童話氛圍。全日步行量大，請穿著舒適。" },
+            { date: "12/11 (四)", theme: "【金色城市浪漫】猶太區、伏爾塔瓦河遊船、半日自由活動", lunch: "伏爾塔瓦河遊船自助餐", dinner: "方便逛街，敬請自理", dinnerDetail: "推薦：Deer Restaurent (老城區氣氛佳，近猶太區): 約 400 - 800 CZK。或在舊城廣場聖誕市集享用小吃。", details: "【下車參觀】火藥塔、市民會館、猶太區。遊船是欣賞布拉格天際線的最佳方式。【建議自費活動】布拉格黑光劇：每人 40 歐元 (最低成行人數 10 人)。", tips: "請務必參加黑光劇，是捷克特色藝術表演。" },
+            { date: "12/12 (五)", theme: "【童話小鎮】皮爾森－庫倫洛夫－布達優維札", lunch: "皮爾森烤雞風味餐+啤酒一杯", lunchDetail: "皮爾森烤雞（Pečené kuře）搭配皮爾森啤酒（Pilsner Urquell）。", dinner: "百年地窖豬腳風味餐", dinnerDetail: "Krčma Šatlava (CK 小鎮地窖餐廳): 烤豬腳（Koleno）約 300 - 500 CZK。", details: "【下車參觀】皮爾森主教座堂、庫倫洛夫城堡區、舊城區。註：庫倫洛夫石板路多，建議攜帶過夜包。", tips: "庫倫洛夫是世界文化遺產，記得在城堡俯瞰小鎮全景。" },
+            { date: "12/13 (六)", theme: "【湖光山色】德國國王湖、奧地利薩爾茲堡", lunch: "方便逛街，敬請自理", lunchDetail: "推薦：薩爾茲堡格拉特大街 (Getreidegasse) 周邊小吃/咖啡廳，嘗試當地甜點 Salzburger Nockerl。", dinner: "中式六菜一湯+水果", details: "【下車參觀】國王湖、米拉貝爾花園、莫札特故居。【建議自費活動】國王湖遊船 / 貝希特斯加登鹽礦洞：各 40 歐元。", tips: "國王湖是德國最乾淨的湖，風景如畫，建議自費遊船才能深入湖區。" },
+            { date: "12/14 (日)", theme: "【最美小鎮】哈斯達特 (Hallstatt)、前往維也納", lunch: "湖區鱒魚風味餐", lunchDetail: "烤鱒魚（Forelle）是湖區特色美食，肉質細嫩。", dinner: "方便逛街，敬請自理", dinnerDetail: "維也納市區或飯店附近輕食。若改聖吉爾根，可參考湖邊餐廳 Bräugasthof Lobisser。", details: "【下車參觀】哈斯達特 (若額滿則改參觀聖吉爾根)。註：若遇維也納大展，飯店可能改住布拉提斯拉瓦同級飯店。", tips: "哈斯達特風景獨特，記得多拍幾張明信片角度的照片。" },
+            { date: "12/15 (一)", theme: "【帝國的餘暉】熊布朗宮後花園、霍夫堡、潘朵芙購物村", lunch: "維也納炸豬排風味餐", lunchDetail: "維也納炸豬排（Wiener Schnitzel）是奧地利國菜，外皮酥脆。", dinner: "方便逛街，敬請自理", dinnerDetail: "推薦：Figlmüller (百年炸豬排老店) 或市政廳聖誕市集小吃: 約 18 - 25 EUR。", details: "【下車參觀】霍夫堡、熊布朗宮後花園、潘朵芙購物村。【建議自費活動】熊布朗宮：每人 45 歐元。", tips: "購物村是採買的好時機，注意營業時間。別忘了參加維也納音樂會！" },
+            { date: "12/16 (二)", theme: "【藝術與音樂】貝維帝爾宮、舊城區、啟程", lunch: "維也納豬肋排風味餐", lunchDetail: "維也納豬肋排（Spareribs）份量驚人，推薦 Ribs of Vienna。", dinner: "方便退稅，敬請自理", dinnerDetail: "在機場或市區輕食，確保有足夠時間辦理退稅手續。", details: "【下車參觀】貝維帝爾宮、百水公寓、聖史帝芬大教堂。註：下午約 17:00 左右前往機場辦理退稅與報到。", tips: "貝維帝爾宮收藏了克林姆的《吻》，值得一看。" }
+        ];
+
+        const marketTips = [
+            { city: "布拉格", name_cn: "煙囪捲", name_local: "Trdelník", price: "120 - 180 CZK", feature: "外酥內軟的肉桂糖烤麵包，香氣逼人。", image: "https://placehold.co/150x100/A62F39/F7F5F0?text=Trdelník" },
+            { city: "布拉格", name_cn: "熱紅酒", name_local: "Svařené víno", price: "80 - 150 CZK", feature: "加入肉桂、丁香的溫暖紅酒，驅散寒意。", image: "https://placehold.co/150x100/15433C/F7F5F0?text=Svařené+víno" },
+            { city: "維也納", name_cn: "炸馬鈴薯餅", name_local: "Kartoffelpuffer", price: "5 - 8 EUR", feature: "金黃酥脆的馬鈴薯煎餅，搭配酸奶或蘋果醬。", image: "https://placehold.co/150x100/D4AF37/15433C?text=Kartoffelpuffer" },
+            { city: "維也納", name_cn: "烤香腸", name_local: "Bratwurst", price: "4 - 6 EUR", feature: "多汁的炭火烤香腸，夾麵包享用。", image: "https://placehold.co/150x100/A62F39/F7F5F0?text=Bratwurst" }
+        ];
+
+        // === 函式庫 ===
+
+        /**
+         * 模擬 LLM API 呼叫，取得動態匯率與天氣資訊
+         */
+        async function fetchDynamicData() {
+            const apiKey = ""; // Canvas will automatically provide the key if this is empty
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const prompt = `
+                請提供以下數據的最新估算值，並以 JSON 格式回傳，數字保留小數點後一位，不要包含任何額外說明或 Markdown 格式。
+                1. 捷克克朗 (CZK) 兌新台幣 (NTD) 的匯率 (1 CZK $\approx$ NTD)。
+                2. 歐元 (EUR) 兌新台幣 (NTD) 的匯率 (1 EUR $\approx$ NTD)。
+                3. 阿聯酋迪拉姆 (AED) 兌新台幣 (NTD) 的匯率 (1 AED $\approx$ NTD)。
+                4. 2025年12月布拉格 (Prague) 的預計平均氣溫範圍 (Celsius)。
+            `;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                tools: [{ "google_search": {} }],
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "OBJECT",
+                        properties: {
+                            "czk_ntd_rate": { "type": "STRING", "description": "1 CZK $\approx$ NTD value" },
+                            "eur_ntd_rate": { "type": "STRING", "description": "1 EUR $\approx$ NTD value" },
+                            "aed_ntd_rate": { "type": "STRING", "description": "1 AED $\approx$ NTD value" },
+                            "prague_dec_temp": { "type": "STRING", "description": "Prague December average temperature range in Celsius" }
+                        }
+                    }
+                }
+            };
+
+            const maxRetries = 3;
+            let delay = 1000;
+
+            document.getElementById('rate-czk').textContent = '更新中...';
+            document.getElementById('rate-eur').textContent = '更新中...';
+            document.getElementById('rate-aed').textContent = '更新中...';
+
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const jsonText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (jsonText) {
+                        const parsedData = JSON.parse(jsonText);
+                        
+                        // Update UI with simplified text
+                        document.getElementById('rate-czk').textContent = (parseFloat(parsedData.czk_ntd_rate) || 1.4).toFixed(1) + ' NTD';
+                        document.getElementById('rate-eur').textContent = (parseFloat(parsedData.eur_ntd_rate) || 35.0).toFixed(1) + ' NTD';
+                        document.getElementById('rate-aed').textContent = (parseFloat(parsedData.aed_ntd_rate) || 8.8).toFixed(1) + ' NTD';
+
+                        const tempElement = document.getElementById('dynamic-info').querySelector('.llm-simulated');
+                        if (tempElement) {
+                            tempElement.textContent = parsedData.prague_dec_temp || '2°C ~ -2°C (估)';
+                        }
+                        console.log("Dynamic data updated successfully.");
+                        return; // Success, exit loop
+                    }
+
+                } catch (error) {
+                    console.error("API call failed (retry needed):", error.message);
+                    if (i < maxRetries - 1) {
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        delay *= 2; // Exponential backoff
+                    } else {
+                        // Final fallback to static/default data
+                        document.getElementById('rate-czk').textContent = '1.4 NTD (估)';
+                        document.getElementById('rate-eur').textContent = '35.0 NTD (估)';
+                        document.getElementById('rate-aed').textContent = '8.8 NTD (估)';
+                    }
+                }
+            }
+        }
+
+
+        /**
+         * 渲染住宿資訊卡片
+         */
+        function renderHotels() {
+            const container = document.getElementById('hotel-list');
+            container.innerHTML = hotelList.map(hotel => `
+                <div class="card-bg p-4 rounded-lg shadow-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="text-xs font-semibold text-gray-500">${hotel.date}</p>
+                        <span class="px-2 py-1 bg-green-200 text-green-800 text-xs rounded-full">${hotel.city}</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-red-700">${hotel.name}</h3>
+                    <p class="text-xs text-gray-600 truncate mb-2">${hotel.add}</p>
+                    <div class="flex justify-between items-center text-sm">
+                        <!-- 使用 Google Maps 搜尋連結 -->
+                        <a href="${hotel.mapLink}" target="_blank" class="flex items-center text-blue-600 hover:text-blue-800 transition duration-300 ${hotel.mapLink ? '' : 'opacity-50 pointer-events-none'}" aria-label="Open Google Map">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            ${hotel.mapLink ? 'Google Map (搜尋)' : '無地圖'}
+                        </a>
+                        <a href="tel:${hotel.tel}" class="text-gray-700 hover:text-red-700 transition duration-300">
+                            TEL: ${hotel.tel}
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * 渲染行程卡片 (包含聖誕市集)
+         */
+        function renderItinerary() {
+            const container = document.getElementById('itinerary-list');
+            let html = '';
+
+            // 1. 聖誕市集特輯
+            html += `
+                <div class="bg-red-700 text-white p-4 rounded-lg shadow-lg mb-6">
+                    <h3 class="font-black text-xl mb-3 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h3V3a1 1 0 112 0v1h3V3a1 1 0 112 0v1h1a1 1 0 011 1v2a1 1 0 01-1 1h-1v7a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 01-1-1V5a1 1 0 011-1h1V3a1 1 0 011-1zm6 4H9v2h2V6zm-6 4H4v7a1 1 0 001 1h10a1 1 0 001-1v-7h-2v2h-2v-2h-2v2H7v-2z" clip-rule="evenodd"></path></svg>
+                        聖誕市集 (Christmas Market) 特輯
+                    </h3>
+                    <p class="text-sm italic mb-4 text-red-200">12月奧捷的靈魂！必吃必體驗的溫馨滋味。</p>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        ${marketTips.map(tip => `
+                            <div class="bg-white p-3 rounded-md text-gray-800 shadow-inner">
+                                <p class="font-bold">${tip.name_cn} <span class="text-xs text-gray-500">(${tip.city})</span></p>
+                                <p class="text-xs text-red-700">${tip.name_local}</p>
+                                <p class="text-xs mt-1">${tip.feature}</p>
+                                <p class="text-xs text-green-800 mt-1">約 ${tip.price}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            // 2. 每日行程
+            html += itinerary.map((day, index) => `
+                <div class="card-bg p-4 rounded-lg shadow-lg itinerary-card" data-index="${index}">
+                    <div class="flex items-center justify-between cursor-pointer">
+                        <h3 class="font-bold text-lg flex flex-col sm:flex-row">
+                            <span class="text-red-700 mr-2">${day.date}</span>
+                            <span class="text-green-800">${day.theme.replace(/【|】/g, '')}</span>
+                        </h3>
+                        <svg class="w-5 h-5 text-red-700 transition-transform duration-300 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+
+                    <div class="itinerary-detail hidden mt-4 border-t pt-4 space-y-3 text-sm">
+                        <p><span class="vibe-title">⭐ 行程內容：</span>${day.details}</p>
+                        <p><span class="vibe-title">🍽️ 午餐：</span>${day.lunch} <span class="text-gray-500 text-xs">${day.lunchDetail || ''}</span></p>
+                        <p><span class="vibe-title">🍷 晚餐：</span>${day.dinner} <span class="text-gray-500 text-xs">${day.dinnerDetail || ''}</span></p>
+                        <p><span class="vibe-title">💡 Vibe Tips：</span>${day.tips}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = html;
+
+            // Add event listeners for accordion
+            document.querySelectorAll('.itinerary-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const detail = this.querySelector('.itinerary-detail');
+                    const arrow = this.querySelector('.arrow-icon');
+                    detail.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                });
+            });
+        }
+
+        /**
+         * 處理 Tab 頁面切換
+         */
+        function setupTabs() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Update button styles
+                    tabs.forEach(t => {
+                        t.classList.remove('tab-active');
+                        t.classList.add('tab-inactive');
+                    });
+                    this.classList.add('tab-active');
+                    this.classList.remove('tab-inactive');
+
+                    // Update content visibility
+                    contents.forEach(content => {
+                        content.classList.add('hidden');
+                        if (content.id === targetTab) {
+                            content.classList.remove('hidden');
+                        }
+                    });
+
+                    // Ensure accommodation section is displayed below the active tab
+                    const accommodationSection = document.getElementById('accommodation');
+                    if (targetTab === 'itinerary' || targetTab === 'local') {
+                         accommodationSection.classList.remove('hidden');
+                    } else {
+                        accommodationSection.classList.add('hidden');
+                    }
+
+                    // For tax/dubai, ensure accommodation is hidden
+                    if (targetTab === 'tax' || targetTab === 'overview') {
+                        accommodationSection.classList.add('hidden');
+                    }
+                });
+            });
+            // Initial setting: Only show accommodation with the initial 'overview' tab
+            document.getElementById('accommodation').classList.add('hidden');
+        }
+
+        // === 初始化 ===
+        window.onload = function() {
+            console.log("App Initialized. Current App ID:", appId);
+            // 載入動態數據
+            fetchDynamicData();
+            // 渲染列表
+            renderHotels();
+            renderItinerary();
+            // 設置 Tab 頁面
+            setupTabs();
+        }
+    </script>
+</body>
+</html>
+
+
